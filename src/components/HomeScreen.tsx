@@ -1,5 +1,5 @@
 import type { UserStats } from '../types';
-import { categories } from '../data/vocabulary';
+import { categories, getWordsByLanguage } from '../data/vocabulary';
 
 interface Props {
   stats: UserStats;
@@ -69,7 +69,7 @@ export function HomeScreen({ stats, onStartSession, onShowProgress }: Props) {
         >
           <span className="lang-flag">&#x1F1EC;&#x1F1E7;</span>
           <span className="lang-name">Anglais</span>
-          <span className="lang-desc">279 mots</span>
+          <span className="lang-desc">{getWordsByLanguage('en').length} mots</span>
         </button>
 
         <button
@@ -78,7 +78,7 @@ export function HomeScreen({ stats, onStartSession, onShowProgress }: Props) {
         >
           <span className="lang-flag">&#x1F1EA;&#x1F1F8;</span>
           <span className="lang-name">Espagnol</span>
-          <span className="lang-desc">130 mots</span>
+          <span className="lang-desc">{getWordsByLanguage('es').length} mots</span>
         </button>
       </div>
 
